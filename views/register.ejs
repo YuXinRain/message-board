@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <%- include('template/head') %>
+</head>
+<html>
+    <%- include('template/navbar') %>
+
+<form method="post" action="/register" style="margin-top: 20px;">
+    <% if(errorMessage && errorMessage.length > 0){ %>
+        <div class="alert alert-danger" role="alert" >
+            <%= errorMessage %>
+        </div>
+    <% } %>  
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" name="username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="password" class="form-control" placeholder="PassWord" name="password" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="NickName" name="nickname" aria-describedby="basic-addon1">
+    </div>
+    <input type="submit" class="input-group mb-3 btn btn-outline-success" value="註冊"/>
+</form>
+
+</html>

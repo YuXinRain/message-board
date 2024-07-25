@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+    <%- include('template/head') %>
+</head>
+<html>
+
+    <%- include('template/navbar') %>
+
+    <% if(errorMessage && errorMessage.length > 0){ %>
+        <div class="alert alert-danger" role="alert"  style="margin-top: 20px;">
+            <%= errorMessage %>
+        </div>
+    <% } %>  
+    <form method="post" action="/" style=" position: relative; display: flex; padding: 20px 0px; justify-content: space-between;">
+        <div class="mb-3">
+            <textarea class="form-control" style="width: 400px;" name="content" id="exampleFormControlTextarea1" rows="4"></textarea>
+        </div>
+        <input class="btn btn-outline-secondary" type="submit" value="新增" style="position: absolute; bottom: 30px; right: 10px;"/>
+    </form>
+
+    <div class="card">
+        <% comments.forEach(comment => { %>
+            <div>
+                <h5 class="card-header" style="display: flex; justify-content: space-between; align-items: center;" >
+                    <div><%= comment.nickname %></div>
+                    <div style="font-size: 12px; color: dimgrey;">
+                        <%= comment.createdAt.toLocaleDateString('zh-CN') %>
+                        <%= comment.createdAt.toLocaleTimeString('zh-CN', { hour12: false }) %>
+                    </div>
+                </h5>
+                <div class="card-body" style="display: flex; justify-content: space-between; align-items: center;">
+                    <p style="margin: 0px;"><%= comment.content %></p>
+                    <% if(username === comment.username){ %>
+                        <div>
+                            <a href="/update_comment/<%= comment.id %>" class="btn btn-outline-secondary">編輯</a>
+                            <a href="/delete_comment/<%= comment.id %>" class="btn btn-outline-secondary">刪除</a>
+                        </div>
+                                                
+                    <% } %>
+                  </div>
+            </div>
+        <% }) %>
+      </div>
+</html>

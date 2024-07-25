@@ -1,0 +1,31 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+        <img src="/template/image/left-arrow.png" width="20" height="20" 
+        class="d-inline-block align-text-top"/>
+        
+    </a>
+        <% if (req.path === '/login') { %>
+            登入
+        <% } %>
+        <% if (req.path === '/register') { %>
+            註冊
+        <% } %>
+        <% if (req.path === '/') { %>
+            留言板
+        <% } %>
+
+
+      <form class="d-flex" role="search">
+        <% if(username){ %>
+            <a href="/logout"class="btn btn-outline-success">登出</a>
+        <% } else { %>
+            <a href="/login"class="btn btn-outline-success" style="margin-right: 10px;">登入</a>
+            <a href="/register"class="btn btn-outline-success">註冊</a>
+        <% } %>
+      </form>
+    </div>
+  </nav>
+
+
+
