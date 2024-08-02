@@ -41,6 +41,5 @@ app.get('/update_comment/:id', commentController.update)
 app.post('/update_comment/:id', commentController.handleUpdate)
 
 app.listen(port, () => {
-    db.connect()
     console.log(`Example app listening on port ${port}`)
 })
