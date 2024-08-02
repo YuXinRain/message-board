@@ -11,7 +11,7 @@
     MVC
 
 ### 主頁
-![無法顯示圖片](https://imgur.com/8tQQkem.png)
+![無法顯示圖片](https://imgur.com/Snk8OWV.png)
 ### 登入
 ![無法顯示圖片](https://imgur.com/Gtyhatl.png)
 ### 註冊
