@@ -5,10 +5,8 @@ const userController = require('./controllers/user')
 const session = require('express-session')
 const flash = require('connect-flash')
 
-
-const db = require('./db')
 const app = express()
-const port = 5001
+const port = (process.env.PORT)
 
 app.set('view engine', 'ejs')
 
